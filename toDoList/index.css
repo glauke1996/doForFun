@@ -1,0 +1,21 @@
+body{
+    background-color: peru;
+
+}
+.clicked{
+    color: beige;
+    transition:color 0.5s ease-in-out;
+}
+
+h1{
+    color:#34495e;
+    cursor: pointer;
+}
+
+.form,
+.greetings{
+    display:none;
+}
+.showing{
+    display:block;
+}
