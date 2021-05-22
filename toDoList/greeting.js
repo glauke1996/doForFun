@@ -4,11 +4,15 @@ greeting=document.querySelector(".js-greetings"),
 USER_LS="currentUser",
 SHOWING_CN="showing";
 
+const userName=[];
+
 function init(){
     loadName();
 
 }
-
+function saveUserName(){
+    localStorage.setItem(USER_LS,userName);
+}
 
 function paintgreeting(text){
     form.classList.remove(SHOWING_CN);
@@ -18,6 +22,8 @@ function paintgreeting(text){
 function handleSubmit(event){
     event.preventDefault();
     const currentValue=input.value;
+    userName.push(currentValue);
+    saveUserName();
     paintgreeting(currentValue);
 }
 function askForName(){
