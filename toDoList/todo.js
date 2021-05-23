@@ -26,7 +26,7 @@ const toDoForm=document.querySelector(".js-toDoForm"),
 
     function loadToDos() {
         const loadedToDos=localStorage.getItem(TODOS_LS);
-        if(loadToDos!==null){
+        if(loadedToDos!==null){
             const parsedToDos=JSON.parse(loadedToDos);
             parsedToDos.forEach(function(toDo){
                 paintToDo(toDo.text);
@@ -47,12 +47,13 @@ const toDoForm=document.querySelector(".js-toDoForm"),
         const span=document.createElement("span");
         const newId=toDos.length+1;
         const img=new Image();
-        delBtn.innerHTML="<img.src=`images/subtraction.png` class=`center`>"
+        delBtn.innerHTML="<img.src=`images/subtraction.png`>"
         delBtn.addEventListener("click",deleteToDo);
-        span.innerText=text;
+        span.innerText=`○${text}`;
         li.appendChild(span);
         li.appendChild(delBtn);
         toDoList.appendChild(li);
+        toDoList.classList.add("toDoSize");
         li.id=newId;
         const toDoObj={
             text:text,

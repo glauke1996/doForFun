@@ -1,7 +1,6 @@
 const WEATHER=document.querySelector(".js-weather")
 const API_KEY="adcbb3096570e803ce5db24b1b1775a0";
 const COORDS='coords';
-const WS='.normal'
 
 function getWeather(lat,lon){
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
@@ -11,8 +10,8 @@ function getWeather(lat,lon){
         const temp=json.main.temp;
         const place=json.name;
         const weath=json.weather[0].main
-        WEATHER.classList.add(WS);
         WEATHER.innerText=`${temp} ℃    ${place}  \n Weather :  ${weath}`
+        WEATHER.classList.add("weatherSize");
         console.log(json);
     })
 }

@@ -5,6 +5,7 @@ setInterval(getTime,1000);
 
 const clockContainer=document.querySelector(".js-clock");
 const clockTitle=clockContainer.querySelector("h1");
+clockTitle.classList.add("clockSize");
 
 function getTime(){
     const date = new Date();
