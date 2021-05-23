@@ -4,9 +4,12 @@ body{
     background-color: rgb(61, 60, 75);
     color:rgb(255, 255, 255);
     font-family: cursive;
-    text-align: justify;
+    text-align: middle;
+    display:flex;
+    zoom : 2;
     line-height: 38px;
-    height: 500px;
+    height: 100vh;
+
     
 }
 .clockSize{
@@ -22,9 +25,6 @@ body{
 .clicked{
     color: beige;
     transition:color 0.5s ease-in-out;
-}
-.js-weather{
-    align-items: baseline;
 }
 .form,
 .greetings{
