@@ -1,18 +1,18 @@
-@import "reset.css";
+/* @import "reset.css"; */
 body{
     
     background-color: rgb(61, 60, 75);
     color:rgb(255, 255, 255);
-    font-family: cursive;
-    text-align: middle;
-    display:flex;
+    /* font-family: cursive; */
+    /* display:flex; */
+    /* text-align: center; */
     zoom : 2;
     line-height: 38px;
-    height: 100vh;
-
-    
+    /* height: 100vh;
+    width: 100vh; */
 }
 .clockSize{
+    zoom:2;
     font-size: xx-large;
 }
 .weatherSize{
@@ -20,6 +20,12 @@ body{
 }
 .toDoSize{
     font-size: small;
+}
+
+.js-weather{
+    position: absolute;
+    top:20px;
+    right:20px;
 }
 
 .clicked{
@@ -50,4 +56,7 @@ body{
     height:100%;
     z-index:-1;
     animation:fadeIn 0.5s linear;
+}
+main{
+    text-align: center;
 }

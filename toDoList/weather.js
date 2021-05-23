@@ -1,19 +1,45 @@
 const WEATHER=document.querySelector(".js-weather")
 const API_KEY="adcbb3096570e803ce5db24b1b1775a0";
 const COORDS='coords';
+const Token="629b76278fe5caf9bf5d5f5bc499550caedf2bfb"
 
-function getWeather(lat,lon){
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+function getAirPollution(lat,lng){
+    fetch(`http://api.waqi.info/feed/geo:${lat};${lng}/?token=${Token}`
     ).then(function(response){
         return response.json();
     }).then(function(json){
-        const temp=json.main.temp;
-        const place=json.name;
-        const weath=json.weather[0].main
-        WEATHER.innerText=`${temp} ℃    ${place}  \n Weather :  ${weath}`
+        const pm10=json.data.iaqi.pm10.v;
+        const pm25=json.data.iaqi.pm25.v;
+        WEATHER.innerText=`pm2.5 : ${pm25}     ${determine25()} \n  pm10  : ${pm10}     ${determine10()} `
         WEATHER.classList.add("weatherSize");
         console.log(json);
     })
+}
+function determine10(pm10){
+    let value="";
+    if(pm10>80){
+        value="Danger!"
+    }
+    else if(pm10<31){
+        value="Good!!";
+    }
+    else{
+        value="Not bad.";
+    }
+    return value;
+}
+function determine25(pm25){
+    let value="";
+    if(pm25>35){
+        value="Danger!"
+    }
+    else if(pm25<16){
+        value="Good!!";
+    }
+    else{
+        value="Not bad";
+    }
+    return value;
 }
 
 function saveTheCoords(coordsOBJ){
@@ -28,7 +54,7 @@ function handleGeoSuccess(position){
         longitude
     }
     saveTheCoords(coordsOBJ);
-    getWeather(latitude,longitude);
+    getAirPollution(latitude,longitude);
 }
 
 function handleGeoError(){
@@ -48,7 +74,7 @@ function loadcoords(){
 
     }else{
         const parsedCoords=JSON.parse(loadedCoords);
-        getWeather(parsedCoords.latitude,parsedCoords.longitude);
+        getAirPollution(parsedCoords.latitude,parsedCoords.longitude);
     }
 }
 function init(){
