@@ -3,10 +3,11 @@ const title=document.querySelector(".title");
 const SHOWING="showing";
 const loadedDids=localStorage.getItem('Dids');
 
+console.log(loadedDids);
 
 
 function loadDids(){
-    if(loadedDids!=="null"){
+    if(loadedDids!=="[]"){
         title.classList.add(SHOWING);
         title.innerText=`DidList`;
         title.addEventListener("click", handleClick);
@@ -18,7 +19,7 @@ function handleClick(event){
     didList.classList.add(SHOWING);
     const parsedDids=JSON.parse(loadedDids);
     parsedDids.forEach(function (Did){
-        paintDidList(Did.text);
+        paintDidList(Did[0].text);
     })
     const deleteBtn=document.createElement("button");
     deleteBtn.innerText=`✔`
@@ -34,7 +35,9 @@ function paintDidList(text){
 }
 function handleDelete(){
     didList.textContent='';
-    localStorage.setItem('Dids',null);
+    const save=[];
+    localStorage.setItem('Dids',JSON.stringify(save));
+    localStorage.setItem('history',null);
 }
 
 function init(){

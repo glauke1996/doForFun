@@ -47,13 +47,16 @@ function deleteToDo(event){
     const btn=event.target;
     const li=btn.parentNode;
     toDoList.removeChild(li);
+    //________________________________
     const deleted=toDos.filter(function (Did) {
         console.log(Did.id,li.id);
         return Did.id===parseInt(li.id);
     })
     Dids.push(deleted);
+    console.log(Dids);
     saveDid();
-        
+    // IO(Dids[0]);
+    //________________________________Dids    
     const cleanToDos=toDos.filter(function (toDo) {
         console.log(toDo.id, li.id);
         return toDo.id !==parseInt(li.id);
@@ -63,7 +66,16 @@ function deleteToDo(event){
     saveToDos();
     }
     function saveDid(){
+        const output=JSON.parse(localStorage.getItem('history'));
+        if(output!==null){
+            Dids.push(output);
+        }
         localStorage.setItem('Dids',JSON.stringify(Dids));
+        
+    }
+    function IO(potato){
+        localStorage.setItem('history',JSON.stringify(potato));
+        console.log(localStorage.getItem('history'));
     }
 
     function saveToDos(){
