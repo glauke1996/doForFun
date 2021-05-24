@@ -10,7 +10,7 @@ function getAirPollution(lat,lng){
     }).then(function(json){
         const pm10=json.data.iaqi.pm10.v;
         const pm25=json.data.iaqi.pm25.v;
-        WEATHER.innerText=`pm2.5 : ${pm25}     ${determine25()} \n  pm10  : ${pm10}     ${determine10()} `
+        WEATHER.innerText=`pm2.5 : ${pm25}     ${determine25(pm25)} \n  pm10  : ${pm10}     ${determine10(pm10)} `
         WEATHER.classList.add("weatherSize");
         console.log(json);
     })
