@@ -32,6 +32,13 @@ body{
     color: beige;
     transition:color 0.5s ease-in-out;
 }
+.title,
+.js-didList{
+    display: none;
+    position:absolute;
+    left:10px;
+    bottom: 10px;
+}
 .form,
 .greetings{
     display:none;
