@@ -7,7 +7,7 @@ body{
     /* display:flex; */
     /* text-align: center; */
     zoom : 2;
-    line-height: 38px;
+    line-height: 30px;
     /* height: 100vh;
     width: 100vh; */
 }
@@ -53,10 +53,18 @@ body{
     top:0;
     left: 0;
     width:100%;
-    height:100%;
+    height:150%;
     z-index:-1;
     animation:fadeIn 0.5s linear;
 }
 main{
     text-align: center;
 }
+ul{
+    position: absolute;
+    left: 35%;
+}
+li{
+    text-align: justify;
+}
+
