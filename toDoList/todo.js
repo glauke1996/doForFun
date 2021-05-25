@@ -41,6 +41,17 @@ function paintToDo(text){
     toDos.push(toDoObj);
     saveToDos();
 }
+// function saveDid(){
+//     const outputs=[];
+//     outputs.push(JSON.parse(localStorage.getItem('history')));
+//     if(outputs!==null){
+//         outputs.forEach(function(output){
+//             Dids.push(output);
+//         })
+//     }
+//     localStorage.setItem('Dids',JSON.stringify(Dids));
+    
+// }
 
 function deleteToDo(event){
     const btn=event.target;
@@ -51,9 +62,8 @@ function deleteToDo(event){
         console.log(Did.id,li.id);
         return Did.id===parseInt(li.id);
     })
-    Dids.push(deleted[0]);
-    console.log(Dids);
-    // saveDid();
+    // Dids.push(deleted[0]);
+    // console.log(Dids);
     IO(deleted[0]);
     //________________________________Dids    
     const cleanToDos=toDos.filter(function (toDo) {
@@ -63,17 +73,12 @@ function deleteToDo(event){
     console.log(cleanToDos);
     toDos=cleanToDos;
     saveToDos();
-    }
-    function saveDid(){
-        const outputs=[];
-        outputs.push(JSON.parse(localStorage.getItem('history')));
-        if(outputs!==null){
-            outputs.forEach(function(output){
-                Dids.push(output);
-            })
-        }
-        localStorage.setItem('Dids',JSON.stringify(Dids));
-        
+}
+    function handleSubmit(event){
+        event.preventDefault();
+        const currentValue=toDoInput.value;
+        paintToDo(currentValue);
+        toDoInput.value="";
     }
     function IO(potato){
         let potatos=[];
@@ -84,7 +89,7 @@ function deleteToDo(event){
                 return sweet!==potato;
             })
         }
-        newPotatos.push(potato);//no duplicated Dids
+        newPotatos.push(potato);//non duplicated Dids
         console.log(newPotatos);
         
         localStorage.setItem('history',JSON.stringify(newPotatos));
@@ -95,12 +100,6 @@ function deleteToDo(event){
         localStorage.setItem('toDos',JSON.stringify(toDos));
     }
 
-    function handleSubmit(event){
-        event.preventDefault();
-        const currentValue=toDoInput.value;
-        paintToDo(currentValue);
-        toDoInput.value="";
-    }
     function init(){
         loadToDos();
         toDoForm.addEventListener("submit",handleSubmit);
