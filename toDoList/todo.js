@@ -8,7 +8,6 @@ const TODOS_LS='toDos';
 let toDos=[];
 let Dids=[]; //local
 
-
 function loadToDos() {
     const loadedToDos=localStorage.getItem(TODOS_LS);
     if(loadedToDos!==null){
@@ -52,10 +51,10 @@ function deleteToDo(event){
         console.log(Did.id,li.id);
         return Did.id===parseInt(li.id);
     })
-    Dids.push(deleted);
+    Dids.push(deleted[0]);
     console.log(Dids);
-    saveDid();
-    // IO(Dids[0]);
+    // saveDid();
+    IO(deleted[0]);
     //________________________________Dids    
     const cleanToDos=toDos.filter(function (toDo) {
         console.log(toDo.id, li.id);
@@ -66,15 +65,29 @@ function deleteToDo(event){
     saveToDos();
     }
     function saveDid(){
-        const output=JSON.parse(localStorage.getItem('history'));
-        if(output!==null){
-            Dids.push(output);
+        const outputs=[];
+        outputs.push(JSON.parse(localStorage.getItem('history')));
+        if(outputs!==null){
+            outputs.forEach(function(output){
+                Dids.push(output);
+            })
         }
         localStorage.setItem('Dids',JSON.stringify(Dids));
         
     }
     function IO(potato){
-        localStorage.setItem('history',JSON.stringify(potato));
+        let potatos=[];
+        let newPotatos=[];
+        potatos=JSON.parse(localStorage.getItem('history'));
+        if(potatos!==null){
+            newPotatos=potatos.filter(function (sweet){
+                return sweet!==potato;
+            })
+        }
+        newPotatos.push(potato);//no duplicated Dids
+        console.log(newPotatos);
+        
+        localStorage.setItem('history',JSON.stringify(newPotatos));
         console.log(localStorage.getItem('history'));
     }
 

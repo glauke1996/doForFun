@@ -1,7 +1,7 @@
 const didList=document.querySelector(".js-didList");
 const title=document.querySelector(".title");
 const SHOWING="showing";
-const loadedDids=localStorage.getItem('Dids');
+const loadedDids=localStorage.getItem('history');
 
 console.log(loadedDids);
 
@@ -19,7 +19,7 @@ function handleClick(event){
     didList.classList.add(SHOWING);
     const parsedDids=JSON.parse(loadedDids);
     parsedDids.forEach(function (Did){
-        paintDidList(Did[0].text);
+        paintDidList(Did.text);
     })
     const deleteBtn=document.createElement("button");
     deleteBtn.innerText=`✔`
@@ -37,7 +37,7 @@ function handleDelete(){
     didList.textContent='';
     const save=[];
     localStorage.setItem('Dids',JSON.stringify(save));
-    localStorage.setItem('history',null);
+    localStorage.setItem('history',JSON.stringify(save));
 }
 
 function init(){
