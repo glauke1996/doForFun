@@ -11,20 +11,16 @@ function loadDids(){
         title.classList.add(SHOWING);
         title.innerText=`DidList`;
         title.addEventListener("click", handleClick);
+        const parsedDids=JSON.parse(loadedDids);
+        parsedDids.forEach(function (Did){
+            paintDidList(Did.text);
+        })
     }
 }
 
 function handleClick(event){
     event.target.classList.remove(SHOWING);
     didList.classList.add(SHOWING);
-    const parsedDids=JSON.parse(loadedDids);
-    parsedDids.forEach(function (Did){
-        paintDidList(Did.text);
-    })
-    const deleteBtn=document.createElement("button");
-    deleteBtn.innerText=`✔`
-    didList.appendChild(deleteBtn);
-    deleteBtn.addEventListener("click",handleDelete)
 }
 function paintDidList(text){
     const li=document.createElement("li");
@@ -32,12 +28,24 @@ function paintDidList(text){
     span.innerText=`${text}`;
     li.appendChild(span);
     didList.appendChild(li);
+    const backBtn=document.createElement("button");
+    backBtn.innerText=`✔`
+    didList.appendChild(backBtn);
+    backBtn.addEventListener("click",handleBack)
+    const deleteBtn=document.createElement("button");
+    deleteBtn.innerText=`✖`
+    didList.appendChild(deleteBtn);
+    deleteBtn.addEventListener("click",handleDelete)
 }
 function handleDelete(){
     didList.textContent='';
     const save=[];
     localStorage.setItem('Dids',JSON.stringify(save));
     localStorage.setItem('history',JSON.stringify(save));
+}
+function handleBack(){
+    didList.classList.remove(SHOWING);
+    title.classList.add(SHOWING);
 }
 
 function init(){
