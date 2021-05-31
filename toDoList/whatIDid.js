@@ -15,6 +15,7 @@ function loadDids(){
         parsedDids.forEach(function (Did){
             paintDidList(Did.text);
         })
+        paintBtn();
     }
 }
 
@@ -28,6 +29,8 @@ function paintDidList(text){
     span.innerText=`${text}`;
     li.appendChild(span);
     didList.appendChild(li);
+}
+function paintBtn(){
     const backBtn=document.createElement("button");
     backBtn.innerText=`✔`
     didList.appendChild(backBtn);
@@ -36,6 +39,7 @@ function paintDidList(text){
     deleteBtn.innerText=`✖`
     didList.appendChild(deleteBtn);
     deleteBtn.addEventListener("click",handleDelete)
+
 }
 function handleDelete(){
     didList.textContent='';
