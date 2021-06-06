@@ -15,19 +15,39 @@ body{
     zoom:2;
     font-size: xx-large;
 }
-.weatherSize{
+.pollutionSize{
     font-size: large;
 }
 .toDoSize{
     font-size: small;
 }
 
+.js-pollution{
+    position: absolute;
+    top:30px;
+    right:30px;
+}
 .js-weather{
     position: absolute;
-    top:20px;
-    right:20px;
+    top: 130px;
+    right:30px;
+    text-align: left;
 }
-
+.js-icon{
+    position: absolute;
+    top: 120px;
+    right: 184px;
+}
+.js-icon2{
+    position: absolute;
+    top: 180px;
+    right: 180px;
+}
+.js-icon3{
+    position: absolute;
+    top: 240px;
+    right: 180px;
+}
 .clicked{
     color: beige;
     transition:color 0.5s ease-in-out;
