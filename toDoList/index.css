@@ -27,7 +27,9 @@ body{
     top:30px;
     right:30px;
 }
+
 .js-weather{
+
     position: absolute;
     top: 130px;
     right:30px;
@@ -36,17 +38,17 @@ body{
 .js-icon{
     position: absolute;
     top: 120px;
-    right: 184px;
+    right: 230px;
 }
 .js-icon2{
     position: absolute;
     top: 180px;
-    right: 180px;
+    right: 230px;
 }
 .js-icon3{
     position: absolute;
     top: 240px;
-    right: 180px;
+    right: 230px;
 }
 .clicked{
     color: beige;

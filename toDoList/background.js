@@ -10,7 +10,7 @@ function paintImage(imgNumber){
 }
 
 function getRandom(){
-    const number=Math.floor(Math.random()*4);
+    const number=Math.floor(Math.random()*6);
     return number;
 }
 

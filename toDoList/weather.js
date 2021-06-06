@@ -34,10 +34,10 @@ function getAirPollution(lat,lng){
             iconLink.push(`http://openweathermap.org/img/wn/${icon[i]}@2x.png`)
         }
         console.log(json);   
-        Weather.innerText= `Today :  ${todayForecast}   \n \n Tomorrow :  ${tomorrowForecast}   \n \n  TDAT :  ${theDayAfterTomorrowForecast}`
-        WeIcon.innerHTML=`<img src=http://openweathermap.org/img/wn/${icon[0]}@2x.png height=52 width=42>`
-        WeIcon2.innerHTML=`<img src=http://openweathermap.org/img/wn/${icon[1]}@2x.png height=60 width=50>`
-        WeIcon3.innerHTML=`<img src=http://openweathermap.org/img/wn/${icon[2]}@2x.png height=60 width=50>`
+        Weather.innerText= `  Today :  ${todayForecast}  \n \n Tomorrow :  ${tomorrowForecast}   \n \n  TDAT :  ${theDayAfterTomorrowForecast}`
+        WeIcon.innerHTML=`<img src=http://openweathermap.org/img/wn/${icon[0]}@2x.png height=52 width=42> `
+        WeIcon2.innerHTML=`<img src=http://openweathermap.org/img/wn/${icon[1]}@2x.png height=52 width=42>`
+        WeIcon3.innerHTML=`<img src=http://openweathermap.org/img/wn/${icon[2]}@2x.png height=52 width=42>`
 
     })
 }
