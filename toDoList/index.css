@@ -1,99 +1,101 @@
 /* @import "reset.css"; */
-body{
-    
-    background-color: rgb(61, 60, 75);
-    color:rgb(255, 255, 255);
-    /* font-family: cursive; */
-    /* display:flex; */
-    /* text-align: center; */
-    zoom : 2;
-    line-height: 30px;
-    /* height: 100vh;
+body {
+  background-color: rgb(61, 60, 75);
+  color: rgb(255, 255, 255);
+  /* font-family: cursive; */
+  /* display:flex; */
+  /* text-align: center; */
+  zoom: 2;
+  line-height: 30px;
+  /* height: 100vh;
     width: 100vh; */
 }
-.clockSize{
-    zoom:2;
-    font-size: xx-large;
-}
-.pollutionSize{
-    font-size: large;
-}
-.toDoSize{
-    font-size: small;
+.clockSize {
+  zoom: 2;
+  font-size: xx-large;
 }
 
-.js-pollution{
-    position: absolute;
-    top:30px;
-    right:30px;
+.toDoSize {
+  font-size: small;
 }
 
-.js-weather{
+.js-pollution {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
 
-    position: absolute;
-    top: 130px;
-    right:30px;
-    text-align: left;
+.js-weather {
+  position: absolute;
+  top: 130px;
+  right: 30px;
+  text-align: left;
+  font-size: small;
 }
-.js-icon{
-    position: absolute;
-    top: 120px;
-    right: 230px;
+.js-icon {
+  position: absolute;
+  top: 120px;
+  right: 200px;
 }
-.js-icon2{
-    position: absolute;
-    top: 180px;
-    right: 230px;
+.js-icon2 {
+  position: absolute;
+  top: 180px;
+  right: 200px;
 }
-.js-icon3{
-    position: absolute;
-    top: 240px;
-    right: 230px;
+.js-icon3 {
+  position: absolute;
+  top: 240px;
+  right: 200px;
 }
-.clicked{
-    color: beige;
-    transition:color 0.5s ease-in-out;
+.clicked {
+  color: beige;
+  transition: color 0.5s ease-in-out;
+}
+.js-toDoList {
+  position: absolute;
+  right: 33%;
+  top: 50%;
+  text-align: left;
 }
 .title,
-.js-didList{
-    display: none;
-    position:absolute;
-    left:10px;
-    bottom: 10px;
+.js-didList {
+  display: none;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
 }
 .form,
-.greetings{
-    display:none;
+.greetings {
+  display: none;
 }
-.showing{
-    display:block;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
-}
-.bgImage{
-    position: absolute;
-    top:0;
-    left: 0;
-    width:100%;
-    height:150%;
-    z-index:-1;
-    animation:fadeIn 0.5s linear;
-}
-main{
-    text-align: center;
-}
-ul{
-    position: absolute;
-    left: 35%;
-}
-li{
-    text-align: justify;
+.showing {
+  display: block;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  z-index: -1;
+  animation: fadeIn 0.5s linear;
+}
+main {
+  text-align: center;
+}
+ul {
+  position: absolute;
+  left: 35%;
+}
+li {
+  text-align: justify;
+}
