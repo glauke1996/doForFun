@@ -29,7 +29,7 @@ body {
   position: absolute;
   top: 130px;
   right: 30px;
-  text-align: left;
+  text-align: justify;
   font-size: small;
 }
 .js-icon {

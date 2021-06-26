@@ -2,9 +2,34 @@
 
 <html>
     <head>
+        <title>Job Search</title>
+        <style>
+            section{
+                display:grid;
+                gap:20px;
+                grid-template-columns: repeat(4,1fr);
+            }
+        </style>
     </head>
     <body>
-        <h1>Search result</h1>
-        <h3>you are looking in {{word}}</h3>
+        <header>
+            {% include "partial/header.html" %}
+            Found {{results_num}} results
+        </header>
+        <section>
+            <h4>Title</h4>
+            <h4>Company</h4>
+            <h4>Location</h4>
+            <h4>Apply</h4>
+        {% for indeed_job in indeed_jobs %}
+            <span>{{indeed_job.title}}</span>
+            <span>{{indeed_job.company}}</span>
+            <span>{{indeed_job.location}}</span>
+            <span><a href="{{indeed_job.link}}">Apply</a></span>
+        {% endfor %}
+        <section>
+
+        
+        
     </body>
 </html>
