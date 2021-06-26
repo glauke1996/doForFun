@@ -36,30 +36,17 @@ body {
 .js-icon {
   position: absolute;
   top: 120px;
-<<<<<<< HEAD
-  right: 210px;
-=======
   right: 190px;
-
->>>>>>> dcdf42a0489b7a185849c4126cc57a5808e80fca
 }
 .js-icon2 {
   position: absolute;
   top: 180px;
-<<<<<<< HEAD
-  right: 210px;
-=======
   right: 190px;
->>>>>>> dcdf42a0489b7a185849c4126cc57a5808e80fca
 }
 .js-icon3 {
   position: absolute;
   top: 240px;
-<<<<<<< HEAD
-  right: 210px;
-=======
   right: 190px;
->>>>>>> dcdf42a0489b7a185849c4126cc57a5808e80fca
 }
 .clicked {
   color: beige;
