@@ -15,9 +15,9 @@ body {
   font-size: xx-large;
 }
 
-.toDoSize {
+/* .toDoSize {
   font-size: small;
-}
+} */
 
 .js-pollution {
   position: absolute;
@@ -25,37 +25,21 @@ body {
   right: 30px;
 }
 
-.js-weather {
-  position: absolute;
-  top: 130px;
-  right: 30px;
-  text-align: justify;
-  font-size: small;
-  margin-left:10px
+
+.today{
+  position : absolute;
+  top : 150px;
+  right : 30px;
 }
-.js-icon {
-  position: absolute;
-  top: 120px;
-  right: 190px;
+.flex{
+  display:flex;
 }
-.js-icon2 {
-  position: absolute;
-  top: 180px;
-  right: 190px;
-}
-.js-icon3 {
-  position: absolute;
-  top: 240px;
-  right: 190px;
-}
+
 .clicked {
   color: beige;
   transition: color 0.5s ease-in-out;
 }
 .js-toDoList {
-  position: absolute;
-  right: 33%;
-  top: 50%;
   text-align: left;
 }
 .title,
@@ -89,6 +73,7 @@ body {
   height: 150%;
   z-index: -1;
   animation: fadeIn 0.5s linear;
+  
 }
 main {
   text-align: center;
@@ -96,7 +81,10 @@ main {
 ul {
   position: absolute;
   left: 35%;
+  margin-top: -10px;
 }
 li {
   text-align: justify;
+  font-size:medium;
+  margin-bottom: 10px;
 }

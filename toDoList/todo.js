@@ -25,8 +25,8 @@ function paintToDo(text){
     const delBtn=document.createElement("button");
     const span=document.createElement("span");
     const newId=toDos.length+1;
-    const img=new Image();
-    delBtn.innerHTML="<img.src=`images/subtraction.png`>"
+    delBtn.innerHTML="<i class='ml-4 fas fa-eraser'></i>delete"
+    delBtn.classList.add("text-xs")
     delBtn.addEventListener("click",deleteToDo);
     span.innerText=`${text}`;
     li.appendChild(span);
@@ -41,17 +41,6 @@ function paintToDo(text){
     toDos.push(toDoObj);
     saveToDos();
 }
-// function saveDid(){
-//     const outputs=[];
-//     outputs.push(JSON.parse(localStorage.getItem('history')));
-//     if(outputs!==null){
-//         outputs.forEach(function(output){
-//             Dids.push(output);
-//         })
-//     }
-//     localStorage.setItem('Dids',JSON.stringify(Dids));
-    
-// }
 
 function deleteToDo(event){
     const btn=event.target;
@@ -62,8 +51,6 @@ function deleteToDo(event){
         console.log(Did.id,li.id);
         return Did.id===parseInt(li.id);
     })
-    // Dids.push(deleted[0]);
-    // console.log(Dids);
     IO(deleted[0]);
     //________________________________Dids    
     const cleanToDos=toDos.filter(function (toDo) {
