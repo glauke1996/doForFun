@@ -33,6 +33,7 @@ function paintToDo(text){
     li.appendChild(delBtn);
     toDoList.appendChild(li);
     toDoList.classList.add("toDoSize");
+    li.classList.add("text-lg")
     li.id=newId;
     const toDoObj={
         text:text,

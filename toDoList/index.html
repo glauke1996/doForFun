@@ -13,8 +13,8 @@
             <div class="js-clock">
                 <h1 class="js-title"></h1>
             </div>
-            <form class="js-form form">
-                <input type="text" placeholder="What is your name?"/>
+            <form class="js-form form ">
+                <input class="rounded-md focus:outline-none focus:text-indigo-400 font-bold px-3 shadow-md hover:shadow-lg" type="text" placeholder="What is your name?"/>
             </form>
             <h4 class="js-greetings greeting"></h4>
             <form class="js-toDoForm mt-6">
@@ -34,31 +34,38 @@
             
             
         </main>
-            <div class="container w-1/5 ml-10 border-t-2 js-bookMark">
-                <div class="p-5 flex flex-wrap">
-                    <a class="hover:opacity-80 h-9 w-9" href="https://www.youtube.com/">
+            <div class="container w-1/4 ml-10 border-t-2 js-bookMark">
+                <div class="flex flex-wrap items-center content-center js-innerContainer">
+                    
+                    <a class="hover:opacity-80 h-9 w-9 m-5" href="https://www.youtube.com/">
                         <div class="h-7 w-7 rounded-full bg-white text-red-600 justify-center flex">
                             <i class="fab fa-youtube text-lg py-1.5"></i>
                         </div>
                         <span class="text-xs -ml-2">Youtube</span>
                     </a>
-                    <a class="hover:opacity-80 h-9 w-9 ml-5" href="https://www.netflix.com/browse">
+                    <a class="hover:opacity-80 h-9 w-9 m-5" href="https://www.netflix.com/browse">
                         <div class="h-7 w-7 rounded-full -ml-1 bg-black text-white justify-center flex">
                             <span class="py-0.5 text-red-700">N</span>
                         </div>
                         <span class="text-xs -ml-2">Netflix</span>
                     </a>
-                    <a class="hover:opacity-80 h-9 w-9 ml-3" href="https://www.google.com/">
+                    <a class="hover:opacity-80 h-9 w-9 m-5" href="https://www.google.com/">
                         <div class="h-7 w-7 rounded-full -ml-1 bg-indigo-200 text-blue-600 justify-center flex">
                             <i class="fab fa-google py-1.5"></i>
                         </div>
                         <span class="text-xs -ml-2">Google</span>
                     </a>
-                    <a class="hover:opacity-80 h-9 w-9 mt-7" href="https://www.naver.com/">
+                    <a class="hover:opacity-80 h-9 w-9 m-5" href="https://www.naver.com/">
                         <div class="h-7 w-7 rounded-full bg-white justify-center flex">
                             <img src="images/logo.png" class="rounded-full h-5 w-5 mt-1">
                         </div>
                         <span class="text-xs -ml-0.5">Naver</span>
+                    </a>
+                    <a class="hover:opacity-80 h-9 w-9 m-5 js-addBtn">
+                        <div class="h-7 w-7 rounded-full bg-white text-black justify-center flex">
+                            <span class="font-bold">+</span>
+                        </div>
+                        <span class="text-xs ml-0.5">Add</span>
                     </a>
                 </div>
             </div>

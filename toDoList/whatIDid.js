@@ -7,7 +7,7 @@ console.log(loadedDids);
 
 
 function loadDids(){
-    if(loadedDids!=="[]"){
+    if(loadedDids!=="[]" && loadedDids!==null){
         title.classList.add(SHOWING);
         title.innerText=`DidList`;
         title.addEventListener("click", handleClick);
