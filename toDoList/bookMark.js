@@ -31,10 +31,10 @@ function paintBookMark(name, address){
     anchor.appendChild(title)
     str.innerText=name[0];
     title.innerText=name
-    div.className="h-7 w-7 rounded-full bg-white text-gray-400 justify-center flex";
-    str.className="py-0.5 font-bold";
+    div.className="h-5 w-5 rounded-full bg-white text-gray-400 justify-center flex";
+    str.className="font-bold";
     title.className="text-xs -ml-2";
-    anchor.className="hover:opacity-80 h-9 w-9 m-5";
+    anchor.className="hover:opacity-80 h-7 w-7 m-4";
     anchor.href=`${address}`
     innerDiv.insertBefore(anchor,addBtn)
     bookMark_obj={
